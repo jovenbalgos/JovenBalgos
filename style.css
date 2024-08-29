@@ -792,7 +792,7 @@ label {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 2s steps(36), cursor 0.4s step-end infinite alternate;
+  animation: typing 2s steps(38), cursor 0.4s step-end infinite alternate;
 }
 
 .contacts {
