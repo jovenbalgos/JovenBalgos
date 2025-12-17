@@ -65,7 +65,9 @@ body {
   animation: bg-scrolling-reverse 0.92s infinite;
   /* IE 10+ */
 }
-
+.content .slash{
+color: #dbd700;
+}
 #introid {
   cursor: pointer;
 }
@@ -338,221 +340,124 @@ body {
   display: inline-flex;
 }
 
-.radiobutton {
-  display: block;
+
+
+    .dashboard {
+        max-width: 1200px;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    .card {
+        background: #2c7ad6;
+        padding: 20px;
+        border-radius: 12px;
+        border-left: 6px solid #1f3c88;
+        border-bottom: 6px solid #1f3c88;
+        transition: 0.3s;
+        margin:20px;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 16px rgba(0,0,0,0.15);
+        background-color: rgba(44, 122, 214, 0.4);
+    }
+    .card h3 {
+        margin-top: 0;
+        color: white;
+        text-align: center;
+        transform: translateX(0);
+        transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), text-align 0.8s ease;
+    }
+    .company {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: white;
+        text-align: center;
+        transition: all 0.6s ease;
+    }
+    .duration {
+        font-size: 14px;
+        color: white;
+        margin-bottom: 10px;
+        text-align: center;
+        transition: all 0.6s ease;
+    }
+    .description {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(10px);
+        transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+        padding:10px;
+    }
+    .card:last-child {
+        justify-self: center;
+    }
+    .center-card {
+        grid-column: 1 / -1;
+        width: 60%;
+        justify-self: center;
+    }
+    .description {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .card:hover h3 {
+        text-align: left;
+        transform: translateX(5px);
+        
+    }
+
+.card:hover .description {
+        opacity: 1;
+        color: white;
+        max-height: 500px;
+        transform: translateY(0);
+        margin-top: 12px;
+    }
+    .card:hover h3 {
+        text-align: left;
+        transform: translateX(8px);
+    }
+
+    .card:hover .company {
+        text-align: left;
+        transform: translateX(8px);
+    }
+
+    .card:hover .duration {
+        text-align: left;
+        transform: translateX(8px);
+    }
+    .card .description,
+.card h3,
+.card .company,
+.card .duration {
+    transition: all 0.5s ease; /* Adjust duration (0.5s) to make it slower or faster */
 }
 
-.experience_line {
-  position: absolute;
-  margin-top: 5px;
-  background-color: #fbfbfb;
-  width: 1000px;
-  height: 2px;
-  border-radius: 50px;
-  z-index: -1;
-}
-
-.radio-group .experience_description {
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  position: absolute;
-  background-color: #2c7ad6;
-  width: 400px;
-  height: auto;
-  z-index: 2;
-  line-height: 30px;
-  padding: 50px;
-}
-
-.experience_description li {
-  color: #fbfbfb;
-  font-size: 15px;
-  font-weight: 300;
-  margin-left: 20px;
-}
-
-.radio-group .experience_description::before {
-  content: url(Images/triangle.png);
-  position: absolute;
-  top: -23px;
-  left: 0;
-  margin-left: 32px;
-}
-
-.experience_description span {
-  font-size: 20px;
-  font-weight: 800;
-  color: #fbfbfb;
-  padding-bottom: 50px;
-}
-
-.experience_description p {
-  font-size: 18px;
-  font-weight: 400;
-  color: #fbfbfb;
-  margin: 30px 0 0 0;
-}
-
-.fa-location-dot {
-  color: #dbd700;
-}
-
-#experience2024 {
-  display: block;
-  animation: fade-in 1s;
-}
-
-#experience2024::after {
-  display: none;
-  animation: fade-in 1s;
-}
-
-#experience2023 {
-  display: none;
-  animation: fade-in 1s;
-}
-
-#experience2022 {
-  display: none;
-  animation: fade-in 1s;
-}
-
-#experience2021 {
-  display: none;
-  animation: fade-in 1s;
-}
-
-#experience2020 {
-  display: none;
-  animation: fade-in 1s;
-}
-
-#experience2019 {
-  display: none;
-  animation: fade-in 1s;
-}
-
-#experience2018 {
-  display: none;
-  animation: fade-in 1s;
-}
-
-#experience2017 {
-  display: none;
-  animation: fade-in 1s;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
+/* Hover effects */
+.card:hover .description {
     opacity: 1;
-  }
+    color: white;
+    max-height: 500px;
+    transform: translateY(0);
+    margin-top: 12px;
+    
 }
 
-@keyframes fade-inabout {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+.card:hover h3,
+.card:hover .company,
+.card:hover .duration {
+    text-align: left;
+    transform: translateX(8px);
 }
 
-.radio-group {
-  display: flex;
-  margin-top: 30px;
-  justify-content: center;
-  gap: 80px;
-  font-weight: 400;
-  width: 100%;
-  height: 650px;
-}
-
-input[type="radio"] {
-  display: block;
-  margin: 0 auto;
-  accent-color: #dbd700;
-  margin-bottom: 15px;
-  cursor: pointer;
-}
-
-#radio_label {
-  cursor: pointer;
-  font-weight: 600;
-  transition: 300ms ease;
-}
-
-.radio1 {
-  font-size: 40px;
-  color: #dbd700;
-  font-weight: 700;
-  transition: 0.4s;
-}
-
-.radio2,
-.radio3,
-.radio4,
-.radio5,
-.radio6,
-.radio7,
-.radio8 {
-  transition: 0.4s;
-}
-
-.radio-group #experience2017 {
-  margin-left: -380px;
-}
-.radio-group #experience2017::before {
-  margin-left: 410px;
-}
-
-.radio-group #experience2018 {
-  margin-left: -400px;
-}
-.radio-group #experience2018::before {
-  margin-left: 420px;
-}
-.radio-group #experience2019 {
-  margin-left: -350px;
-}
-.radio-group #experience2019::before {
-  margin-left: 370px;
-}
-.radio-group #experience2020 {
-  margin-left: -180px;
-}
-.radio-group #experience2020::before {
-  margin-left: 200px;
-}
-.radio-group #experience2021 {
-  margin-left: -180px;
-}
-.radio-group #experience2021::before {
-  margin-left: 200px;
-}
-
-.radio-group #experience2022 {
-  margin-left: -150px;
-}
-.radio-group #experience2022::before {
-  margin-left: 170px;
-}
-.radio-group #experience2023::before {
-  margin-left: 20px;
-}
-.radio-group #experience2024::before {
-  margin-left: 20px;
-}
-label {
-  display: inline-block;
-  font-size: 20px;
-  color: #fbfbfb;
-}
 
 .works_container {
   display: flex;
@@ -804,26 +709,32 @@ label {
   letter-spacing: 3px;
   font-size: 27px;
   width: auto;
-  padding-top: 300px;
+  padding-top: 100px; /* reduced for smaller screens */
+  text-align: center;
 }
 
 .footer_main_content {
   display: flex;
+  flex-wrap: wrap; /* allows items to wrap on small screens */
   width: 100%;
-  height: 300px;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 50px 0;
+}
+
+.footer_content1,
+.footer_content2,
+.footer_content3 {
+  flex: 1 1 300px; /* grow/shrink with a minimum width of 300px */
+  margin: 10px;
 }
 
 .footer_content1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: right;
-  width: 100%;
+  align-items: flex-start; /* fixed from "right" which isn’t valid */
   font-size: 20px;
-  margin-left: 150px;
+  margin-left:150px;
 }
 
 .footer_content1 span {
@@ -835,7 +746,8 @@ label {
 
 .footer_content1 p {
   color: #fbfbfb;
-  width: 500px;
+  width: 100%; /* make paragraph responsive */
+  max-width: 500px;
   line-height: 32px;
   font-size: 18px;
   margin-top: 0;
@@ -845,37 +757,33 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
 #footer_ending {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 30px auto;
   color: #fbfbfb;
-  margin-top: 30px;
-  margin-bottom: 30px;
 }
 
 .line {
   background-color: #dbd700;
   width: 3px;
-  height: 40vh;
+  height: 200px; /* reduced height for smaller screens */
   transform: rotate(30deg);
   border-radius: 50px;
+  margin: 20px auto;
 }
 
 .footer_content3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
   color: #fbfbfb;
   font-size: 18px;
   line-height: 50px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin: 10px;
 }
 
 .footer_content3 a {
@@ -888,15 +796,50 @@ label {
   color: #dbd700;
 }
 
-.fa-envelope {
-  font-size: 20px;
-  color: #2c7ad6;
-}
-
+.fa-envelope,
 .fa-phone {
   font-size: 20px;
   color: #2c7ad6;
 }
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  .contacts {
+    font-size: 22px;
+    padding-top: 50px;
+  }
+  .footer_content1 p,
+  .footer_content3 {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .line {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacts {
+    font-size: 18px;
+    padding-top: 30px;
+  }
+  .footer_content1,
+  .footer_content2,
+  .footer_content3 {
+    flex: 1 1 100%;
+    margin: 5px 0;
+    text-align: center;
+    align-items: center;
+  }
+  .footer_content1 p,
+  .footer_content3 {
+    line-height: 24px;
+  }
+  .line {
+    display: none; /* optional: hide decorative line on very small screens */
+  }
+}
+
 
 .fa-file-arrow-down {
   font-size: 20px;
